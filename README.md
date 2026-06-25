@@ -11,6 +11,8 @@
 
 <br>
 
+<img src="etc/screenshot.png" width="100%">
+
 Personal BSPWM dotfiles using the [Everblush](https://github.com/mangeshrex/everblush.vim) colorscheme.
 
 | Component | Tool |

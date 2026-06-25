@@ -20,7 +20,6 @@
         }
     },
     "modules": [
-        "title",
         "break",
         {
             "type": "packages",
@@ -50,6 +49,11 @@
         {
             "type": "theme",
             "key": "Theme",
+            "keyColor": "32"
+        },
+        {
+            "type": "font",
+            "key": "Font",
             "keyColor": "32"
         },
         {
