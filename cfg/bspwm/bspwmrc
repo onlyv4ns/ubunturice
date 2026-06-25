@@ -4,6 +4,7 @@ export GDK_DPI_SCALE=0.75
 export GDK_SCALE=1
 
 xrdb -merge ~/.Xresources
+xwallpaper --zoom ~/wall/wallpaper.jpg &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 1 2 3 4 5

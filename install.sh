@@ -118,7 +118,8 @@ cp "$DOTFILES_DIR/cfg/fastfetch/config.jsonc"      "$CONFIG_DIR/fastfetch/config
 cp "$DOTFILES_DIR/cfg/.Xresources"                "$HOME/.Xresources"
 
 info "Copying wallpaper..."
-cp "$DOTFILES_DIR/etc/whitewaves.jpg" "$HOME/wall/whitewaves.jpg"
+cp "$DOTFILES_DIR/etc/wallpaper.jpg" "$HOME/wall/wallpaper.jpg"
+xwallpaper --zoom "$HOME/wall/wallpaper.jpg" &
 
 info "Installing fonts..."
 cp "$DOTFILES_DIR/fonts/"*.ttf   "$HOME/.local/share/fonts/" 2>/dev/null || true
