@@ -43,7 +43,7 @@ prompt {
 }
 
 entry {
-    placeholder:       "Cari aplikasi...";
+    placeholder:       "Search applications...";
     placeholder-color: @dim;
     font:              "JetBrainsMono Nerd Font 11";
     cursor:            text;
