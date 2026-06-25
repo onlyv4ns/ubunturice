@@ -1,0 +1,164 @@
+# ============================================================
+# Shortcut Umum
+# ============================================================
+
+# Terminal
+ctrl + alt + t
+	alacritty --working-directory ~
+super + Return
+	alacritty --working-directory ~
+
+# Browser
+ctrl + alt + b
+	env GDK_DPI_SCALE=0.75 google-chrome --ozone-platform=x11
+
+# File manager
+ctrl + alt + e
+	env GDK_DPI_SCALE=0.75 nautilus
+
+# Text editor
+ctrl + alt + c
+	env GDK_DPI_SCALE=0.75 code --ozone-platform=x11
+
+# App launcher
+super + d
+	rofi -show drun
+super + space
+	dmenu_run
+
+# Tutup window (seperti Windows Alt+F4)
+alt + F4
+	bspc node -c
+
+# Reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# ============================================================
+# Screenshot
+# ============================================================
+
+# Fullscreen
+Print
+	mkdir -p ~/Pictures && maim ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+
+# Pilih area
+shift + Print
+	mkdir -p ~/Pictures && maim -s ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+
+# Fullscreen ke clipboard
+ctrl + Print
+	maim | xclip -selection clipboard -t image/png
+
+# Pilih area ke clipboard
+ctrl + shift + Print
+	maim -s | xclip -selection clipboard -t image/png
+
+# ============================================================
+# Volume (PipeWire)
+# ============================================================
+
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# ============================================================
+# BSPWM — Window
+# ============================================================
+
+# Tutup / kill window
+super + w
+	bspc node -c
+
+super + shift + w
+	bspc node -k
+
+# Layout tiled / floating / fullscreen / pseudo-tiled
+super + {t,s,f,shift + t}
+	bspc node -t {tiled,floating,fullscreen,pseudo_tiled}
+
+# Node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# ============================================================
+# BSPWM — Fokus & Pindah
+# ============================================================
+
+# Fokus dengan arrow (familiar)
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# Fokus dengan vim keys
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Pindah window dengan vim keys
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# Pindah window dengan arrow
+super + shift + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
+
+# Swap dengan window terbesar
+super + g
+	bspc node -s biggest.window
+
+# ============================================================
+# BSPWM — Desktop
+# ============================================================
+
+# Pindah desktop
+super + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+# Kirim window ke desktop
+super + shift + {1-9,0}
+	bspc node -d '^{1-9,10}'
+
+# Desktop sebelumnya / berikutnya
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# Toggle monocle
+super + m
+	bspc desktop -l next
+
+# ============================================================
+# BSPWM — Resize
+# ============================================================
+
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -30 0,bottom 0 30,top 0 -30,right 30 0}
+
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node -z {right -30 0,top 0 30,bottom 0 -30,left 30 0}
+
+# ============================================================
+# BSPWM — Preselect
+# ============================================================
+
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+super + ctrl + space
+	bspc node -p cancel
+
+# ============================================================
+# BSPWM — Session
+# ============================================================
+
+super + alt + r
+	bspc wm -r
+
+super + alt + q
+	bspc quit

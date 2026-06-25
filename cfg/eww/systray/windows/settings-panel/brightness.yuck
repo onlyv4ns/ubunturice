@@ -1,0 +1,16 @@
+(defpoll current-brightness :interval "1s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defwidget brightness[]
+  (box
+    :orientation "h"
+    :class "brightness"
+    :space-evenly false
+    (label :text "" :class "brightness-down")
+    (scale
+      :class "brightness-scale"
+      :hexpand false
+      :height 4
+      :width 170
+      :min 0
+      :max 95
+      :value current-brightness
+      :onchange "brightnessctl set {}%")))

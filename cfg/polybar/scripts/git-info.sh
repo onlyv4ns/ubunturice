@@ -1,0 +1,1 @@
+/home/evan/dotfiles/cfg/polybar/scripts/git-info.sh
