@@ -1,0 +1,52 @@
+@theme "/dev/null"
+
+* {
+    bg:      #0d1117;
+    fg:      #e6edf3;
+    accent:  #3fb950;
+    dim:     #21262d;
+    background-color: @bg;
+    text-color:       @fg;
+    border-color:     @dim;
+}
+
+window {
+    width:         220px;
+    location:      northeast;
+    x-offset:      -12px;
+    y-offset:      48px;
+    border-radius: 12px;
+    border:        1px;
+    padding:       6px;
+}
+
+mainbox {
+    children:  [ listview ];
+    spacing:   0;
+}
+
+listview {
+    columns: 1;
+    lines:   3;
+    cycle:   false;
+    spacing: 4px;
+}
+
+element {
+    children:      [ element-text ];
+    padding:       8px 12px;
+    border-radius: 8px;
+    cursor:        pointer;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    cursor:           pointer;
+    font:             "JetBrainsMono Nerd Font Bold 10";
+}
+
+element selected {
+    background-color: @bg;
+    text-color:       @accent;
+}

@@ -1,0 +1,97 @@
+@theme "/dev/null"
+
+* {
+    bg:      #0d1117;
+    bg2:     #161b22;
+    border:  #21262d;
+    fg:      #e6edf3;
+    dim:     #8b949e;
+    accent:  #3fb950;
+
+    background-color: transparent;
+    text-color:       @fg;
+    border-color:     @border;
+}
+
+window {
+    width:            480px;
+    location:         center;
+    anchor:           center;
+    background-color: @bg;
+    border-radius:    16px;
+    border:           1px;
+    padding:          16px;
+}
+
+mainbox {
+    children:  [ inputbar, listview ];
+    spacing:   12px;
+}
+
+inputbar {
+    children:     [ prompt, entry ];
+    background-color: @bg2;
+    border-radius: 10px;
+    border:        1px;
+    padding:       10px 14px;
+    spacing:       8px;
+}
+
+prompt {
+    text-color: @accent;
+    font:       "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    placeholder:       "Cari aplikasi...";
+    placeholder-color: @dim;
+    font:              "JetBrainsMono Nerd Font 11";
+    cursor:            text;
+}
+
+listview {
+    columns:  1;
+    lines:    7;
+    cycle:    false;
+    spacing:  4px;
+    scrollbar: false;
+}
+
+element {
+    children:      [ element-icon, element-text ];
+    padding:       8px 10px;
+    border-radius: 8px;
+    cursor:        pointer;
+    spacing:       10px;
+}
+
+element-icon {
+    size:             24px;
+    background-color: transparent;
+    cursor:           pointer;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    cursor:           pointer;
+    font:             "JetBrainsMono Nerd Font 10";
+    vertical-align:   0.5;
+}
+
+element normal {
+    background-color: transparent;
+    text-color:       @fg;
+}
+
+element selected {
+    background-color: @bg2;
+    text-color:       @accent;
+    border:           1px;
+    border-color:     @border;
+    border-radius:    8px;
+}
+
+element alternate {
+    background-color: transparent;
+}

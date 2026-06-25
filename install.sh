@@ -101,6 +101,8 @@ cp "$DOTFILES_DIR/cfg/alacritty/alacritty.toml"   "$CONFIG_DIR/alacritty/alacrit
 cp "$DOTFILES_DIR/cfg/kitty/kitty.conf"            "$CONFIG_DIR/kitty/kitty.conf"
 
 cp "$DOTFILES_DIR/cfg/rofi/config.rasi"            "$CONFIG_DIR/rofi/config.rasi"
+cp "$DOTFILES_DIR/cfg/rofi/powermenu.rasi"         "$CONFIG_DIR/rofi/powermenu.rasi"
+cp "$DOTFILES_DIR/cfg/rofi/launcher.rasi"          "$CONFIG_DIR/rofi/launcher.rasi"
 cp "$DOTFILES_DIR/cfg/rofi/themes/"*.rasi          "$CONFIG_DIR/rofi/themes/"
 
 cp -r "$DOTFILES_DIR/cfg/eww/systray/"            "$CONFIG_DIR/eww/"

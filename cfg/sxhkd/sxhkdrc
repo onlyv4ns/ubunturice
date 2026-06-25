@@ -22,7 +22,7 @@ ctrl + alt + c
 
 # App launcher
 super + d
-	rofi -show drun
+	rofi -show drun -theme ~/.config/rofi/launcher.rasi
 super + space
 	dmenu_run
 
@@ -40,11 +40,11 @@ super + Escape
 
 # Fullscreen
 Print
-	mkdir -p ~/Pictures && maim ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+	mkdir -p ~/Pictures/Screenshots && maim ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
 
 # Pilih area
 shift + Print
-	mkdir -p ~/Pictures && maim -s ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+	mkdir -p ~/Pictures/Screenshots && maim -s ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
 
 # Fullscreen ke clipboard
 ctrl + Print
