@@ -12,6 +12,10 @@ super + Return
 ctrl + alt + b
 	env GDK_DPI_SCALE=0.75 google-chrome --ozone-platform=x11
 
+# Discord
+ctrl + alt + d
+	discord --enable-transparent-visuals
+
 # File manager
 ctrl + alt + e
 	env GDK_DPI_SCALE=0.75 nautilus

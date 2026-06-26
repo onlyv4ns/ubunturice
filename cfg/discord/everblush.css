@@ -1,15 +1,15 @@
 /**
  * @name Everblush Dark
- * @description Matches the bspwm dotfiles color palette
+ * @description Matches the bspwm dotfiles color palette — with transparency
  * @author onlyv4ns
- * @version 1.0
+ * @version 1.1
  */
 
 :root {
   /* Palette */
-  --bg:      #0a1114;
-  --surface: #141b1e;
-  --overlay: #1d2527;
+  --bg:      rgba(10,17,20,0.75);
+  --surface: rgba(20,27,30,0.65);
+  --overlay: rgba(29,37,39,0.80);
   --muted:   #3b4244;
   --fg:      #dadada;
   --dim:     #8a9096;
@@ -21,55 +21,62 @@
   --cyan:    #6cbfbf;
 
   /* Discord variable overrides */
-  --background-primary:          var(--surface);
-  --background-secondary:        var(--bg);
-  --background-secondary-alt:    var(--bg);
-  --background-tertiary:         var(--bg);
-  --background-accent:           var(--overlay);
-  --background-floating:         var(--overlay);
-  --background-modifier-hover:   rgba(103,176,232,0.07);
-  --background-modifier-active:  rgba(103,176,232,0.12);
-  --background-modifier-selected:rgba(103,176,232,0.15);
+  --background-primary:           var(--surface);
+  --background-secondary:         var(--bg);
+  --background-secondary-alt:     var(--bg);
+  --background-tertiary:          var(--bg);
+  --background-accent:            var(--overlay);
+  --background-floating:          var(--overlay);
+  --background-modifier-hover:    rgba(103,176,232,0.07);
+  --background-modifier-active:   rgba(103,176,232,0.12);
+  --background-modifier-selected: rgba(103,176,232,0.15);
 
-  --text-normal:         var(--fg);
-  --text-muted:          var(--dim);
-  --text-link:           var(--accent);
-  --header-primary:      var(--fg);
-  --header-secondary:    var(--dim);
-  --interactive-normal:  var(--fg);
-  --interactive-hover:   #ffffff;
-  --interactive-active:  #ffffff;
-  --interactive-muted:   var(--muted);
+  --text-normal:          var(--fg);
+  --text-muted:           var(--dim);
+  --text-link:            var(--accent);
+  --header-primary:       var(--fg);
+  --header-secondary:     var(--dim);
+  --interactive-normal:   var(--fg);
+  --interactive-hover:    #ffffff;
+  --interactive-active:   #ffffff;
+  --interactive-muted:    var(--muted);
 
-  --channeltextarea-background:   var(--overlay);
-  --deprecated-card-bg:           var(--overlay);
-  --deprecated-store-bg:          var(--bg);
+  --channeltextarea-background:            var(--overlay);
+  --deprecated-card-bg:                    var(--overlay);
+  --deprecated-store-bg:                   var(--bg);
   --deprecated-quickswitcher-input-background: var(--overlay);
 
   --scrollbar-thin-thumb:  var(--muted);
   --scrollbar-thin-track:  transparent;
   --scrollbar-auto-thumb:  var(--muted);
-  --scrollbar-auto-track:  var(--bg);
+  --scrollbar-auto-track:  transparent;
 
-  --input-background: var(--overlay);
-  --modal-background: var(--surface);
-  --modal-footer-background: var(--bg);
+  --input-background:        var(--overlay);
+  --modal-background:        rgba(20,27,30,0.90);
+  --modal-footer-background: rgba(10,17,20,0.90);
 
   --brand-experiment:        var(--accent);
   --brand-experiment-560:    var(--accent);
   --brand-500:               var(--accent);
 
-  --status-positive-text:    var(--green);
+  --status-positive-text:       var(--green);
   --status-positive-background: rgba(112,202,109,0.15);
-  --status-warning-text:     var(--yellow);
-  --status-danger-text:      var(--red);
-  --status-danger-background: rgba(229,116,116,0.15);
+  --status-warning-text:        var(--yellow);
+  --status-danger-text:         var(--red);
+  --status-danger-background:   rgba(229,116,116,0.15);
 
-  --mention-foreground:      var(--accent);
-  --mention-background:      rgba(103,176,232,0.15);
+  --mention-foreground:   var(--accent);
+  --mention-background:   rgba(103,176,232,0.12);
 }
 
-/* Titlebar / app frame */
+/* Root app — must be transparent for picom blur to show through */
+#app-mount,
+[class*="app-"],
+[class*="baseLayer"] {
+  background: transparent !important;
+}
+
+/* Titlebar */
 .titleBar__0e555,
 [class*="titleBar"] {
   background-color: var(--bg) !important;
@@ -87,14 +94,14 @@ nav[class*="guilds"],
   background-color: var(--bg) !important;
 }
 
-/* Active channel highlight */
+/* Active channel */
 [class*="channel"][class*="selected"],
 [class*="modeSelected"] {
   background-color: var(--overlay) !important;
   color: var(--fg) !important;
 }
 
-/* Server icon hover / active */
+/* Server icon active pill */
 [class*="wrapper"][class*="selected"] [class*="childWrapper"],
 [class*="pill"] {
   background-color: var(--accent) !important;
@@ -108,7 +115,7 @@ nav[class*="guilds"],
 
 /* Message hover */
 [class*="message"]:hover {
-  background-color: rgba(29,37,39,0.5) !important;
+  background-color: rgba(29,37,39,0.4) !important;
 }
 
 /* Message input */
@@ -127,23 +134,29 @@ nav[class*="guilds"],
 /* User popout / profile */
 [class*="userPopout"],
 [class*="profilePanel"] {
-  background-color: var(--surface) !important;
-  border: 1px solid var(--overlay) !important;
+  background-color: rgba(20,27,30,0.90) !important;
+  border: 1px solid rgba(59,66,68,0.5) !important;
   border-radius: 10px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
 /* Modals */
 [class*="root-"][class*="modal"],
 [class*="content-"][class*="modal"] {
-  background-color: var(--surface) !important;
+  background-color: rgba(20,27,30,0.90) !important;
   border-radius: 10px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
 /* Context menus */
 [class*="menu-"] {
-  background-color: var(--overlay) !important;
-  border: 1px solid var(--muted) !important;
+  background-color: rgba(29,37,39,0.90) !important;
+  border: 1px solid rgba(59,66,68,0.5) !important;
   border-radius: 8px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
 
 [class*="colorDefault"][class*="item-"] {
@@ -165,7 +178,7 @@ nav[class*="guilds"],
 [class*="lookFilled"][class*="colorBrand"],
 [class*="colorBrand_"] {
   background-color: var(--accent) !important;
-  color: var(--bg) !important;
+  color: rgba(10,17,20,1) !important;
 }
 
 [class*="lookFilled"][class*="colorBrand"]:hover {
@@ -180,7 +193,7 @@ nav[class*="guilds"],
   border-radius: 4px;
 }
 
-/* Voice / video panel */
+/* Voice / bottom panel */
 [class*="panels-"],
 [class*="panel-"] {
   background-color: var(--bg) !important;
@@ -194,8 +207,8 @@ nav[class*="guilds"],
 
 /* Tooltip */
 [class*="tooltip-"] {
-  background-color: var(--overlay) !important;
-  border: 1px solid var(--muted) !important;
+  background-color: rgba(29,37,39,0.95) !important;
+  border: 1px solid rgba(59,66,68,0.5) !important;
   border-radius: 6px !important;
   color: var(--fg) !important;
 }

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Discord
+Exec=/usr/bin/discord --enable-transparent-visuals --url -- %u
+Icon=discord
+Type=Application
+Categories=Network;InstantMessaging;
+MimeType=x-scheme-handler/discord;
