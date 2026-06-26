@@ -1,0 +1,64 @@
+/* Everblush-inspired palette for libadwaita (Nautilus 50+, GTK4 apps) */
+
+window,
+.nautilus-window {
+  --accent-color:              #67b0e8;
+  --accent-bg-color:           #67b0e8;
+  --accent-fg-color:           #0a1114;
+
+  --window-bg-color:           #0a1114;
+  --window-fg-color:           #dadada;
+
+  --view-bg-color:             #141b1e;
+  --view-fg-color:             #dadada;
+
+  --headerbar-bg-color:        #141b1e;
+  --headerbar-fg-color:        #dadada;
+  --headerbar-border-color:    #1d2527;
+  --headerbar-backdrop-color:  #0a1114;
+  --headerbar-shade-color:     rgba(0, 0, 0, 0.25);
+
+  --sidebar-bg-color:          #0a1114;
+  --sidebar-fg-color:          #dadada;
+  --sidebar-border-color:      #1d2527;
+  --sidebar-backdrop-color:    #0a1114;
+
+  --card-bg-color:             #1d2527;
+  --card-fg-color:             #dadada;
+  --card-shade-color:          rgba(0, 0, 0, 0.2);
+
+  --thumbnail-bg-color:        #1d2527;
+  --thumbnail-fg-color:        #dadada;
+
+  --popover-bg-color:          #1d2527;
+  --popover-fg-color:          #dadada;
+  --popover-border-color:      #3b4244;
+
+  --dialog-bg-color:           #141b1e;
+  --dialog-fg-color:           #dadada;
+
+  --shade-color:               rgba(0, 0, 0, 0.3);
+  --scrollbar-outline-color:   #0a1114;
+
+  --border-color:              #1d2527;
+}
+
+/* Selected item uses accent blue */
+.view:selected,
+row:selected,
+.nautilus-canvas-item:selected {
+  background-color: alpha(#67b0e8, 0.2);
+  color: #dadada;
+}
+
+/* Sidebar hover */
+.sidebar-row:hover,
+placessidebar row:hover {
+  background-color: #1d2527;
+}
+
+placessidebar row:selected,
+placessidebar row:active {
+  background-color: alpha(#67b0e8, 0.2);
+  color: #67b0e8;
+}

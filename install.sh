@@ -82,7 +82,9 @@ mkdir -p \
     "$CONFIG_DIR/zathura" \
     "$HOME/wall" \
     "$HOME/.local/share/fonts" \
-    "$HOME/.local/share/applications"
+    "$HOME/.local/share/applications" \
+    "$CONFIG_DIR/gtk-3.0" \
+    "$CONFIG_DIR/gtk-4.0"
 
 info "Copying config files..."
 
@@ -119,6 +121,11 @@ cp "$DOTFILES_DIR/cfg/neovim/init.lua"             "$CONFIG_DIR/nvim/init.lua"
 cp "$DOTFILES_DIR/cfg/fastfetch/config.jsonc"      "$CONFIG_DIR/fastfetch/config.jsonc"
 
 cp "$DOTFILES_DIR/cfg/.Xresources"                "$HOME/.Xresources"
+
+cp "$DOTFILES_DIR/cfg/gtk-3.0/settings.ini"       "$CONFIG_DIR/gtk-3.0/settings.ini"
+cp "$DOTFILES_DIR/cfg/gtk-4.0/settings.ini"        "$CONFIG_DIR/gtk-4.0/settings.ini"
+cp "$DOTFILES_DIR/cfg/gtk-4.0/gtk.css"             "$CONFIG_DIR/gtk-4.0/gtk.css"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 cp "$DOTFILES_DIR/cfg/applications/google-chrome.desktop" "$HOME/.local/share/applications/google-chrome.desktop"
 
