@@ -81,7 +81,8 @@ mkdir -p \
     "$CONFIG_DIR/bat/themes" \
     "$CONFIG_DIR/zathura" \
     "$HOME/wall" \
-    "$HOME/.local/share/fonts"
+    "$HOME/.local/share/fonts" \
+    "$HOME/.local/share/applications"
 
 info "Copying config files..."
 
@@ -118,6 +119,23 @@ cp "$DOTFILES_DIR/cfg/neovim/init.lua"             "$CONFIG_DIR/nvim/init.lua"
 cp "$DOTFILES_DIR/cfg/fastfetch/config.jsonc"      "$CONFIG_DIR/fastfetch/config.jsonc"
 
 cp "$DOTFILES_DIR/cfg/.Xresources"                "$HOME/.Xresources"
+
+cp "$DOTFILES_DIR/cfg/applications/google-chrome.desktop" "$HOME/.local/share/applications/google-chrome.desktop"
+
+mkdir -p "$HOME/.local/share/chrome-theme"
+cp -r "$DOTFILES_DIR/cfg/chrome-theme/"* "$HOME/.local/share/chrome-theme/"
+info "Chrome theme copied to ~/.local/share/chrome-theme/"
+info "  To apply: open chrome://extensions → enable Developer mode → Load unpacked → select that folder"
+
+# Firefox userChrome — requires toolkit.legacyUserProfileCustomizations.stylesheets = true in about:config
+FF_PROFILE=$(find "$HOME/.mozilla/firefox" -maxdepth 1 -name "*.default-release" -type d 2>/dev/null | head -1)
+if [[ -n "$FF_PROFILE" ]]; then
+    mkdir -p "$FF_PROFILE/chrome"
+    cp -r "$DOTFILES_DIR/cfg/firefox/chrome/"* "$FF_PROFILE/chrome/"
+    info "Firefox chrome installed to $FF_PROFILE/chrome/"
+else
+    warn "Firefox profile not found — run Firefox once, then re-run this script to install the theme"
+fi
 
 info "Copying wallpaper..."
 cp "$DOTFILES_DIR/etc/wallpaper.jpg" "$HOME/wall/wallpaper.jpg"
