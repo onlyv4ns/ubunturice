@@ -11,7 +11,7 @@ CHOSEN=$(printf "%s\n%s\n%s" "$SHUTDOWN" "$RESTART" "$LOGOUT" \
     -no-custom)
 
 case "$CHOSEN" in
-  "$SHUTDOWN") systemctl poweroff ;;
-  "$RESTART")  systemctl reboot ;;
+  "$SHUTDOWN") loginctl poweroff ;;
+  "$RESTART")  loginctl reboot ;;
   "$LOGOUT")   bspc quit ;;
 esac
