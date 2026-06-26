@@ -34,6 +34,7 @@ Personal BSPWM dotfiles running on Ubuntu (X11), using a custom dark colorscheme
 | Clipboard | [clipmenu](https://github.com/cdown/clipmenu) |
 | System Info | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | PDF Viewer | [Zathura](https://pwmt.org/projects/zathura) |
+| Image Viewer | [nsxiv](https://github.com/nsxiv/nsxiv) |
 
 <br>
 
