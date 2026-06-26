@@ -144,17 +144,43 @@ Screenshot menu options:
 | `Ctrl + ,` | Open settings (find Vencord section at bottom) |
 | `Ctrl + Shift + I` | DevTools (for debugging) |
 
-### Window
+### BSPWM — Window
 | Key | Action |
 |---|---|
 | `Super + W` | Close window |
+| `Super + Shift + W` | Kill window (force) |
 | `Super + {H,J,K,L}` / `Super + Arrows` | Focus window |
-| `Super + Shift + {H,J,K,L}` | Move window |
+| `Super + Shift + {H,J,K,L}` / `Super + Shift + Arrows` | Move window |
+| `Super + G` | Swap with largest window |
 | `Super + {T,S,F}` | Tiled / Floating / Fullscreen |
-| `Super + M` | Toggle monocle |
-| `Super + {1-9}` | Switch desktop |
+| `Super + Shift + T` | Pseudo-tiled |
+| `Super + M` | Toggle monocle layout |
+
+### BSPWM — Desktop
+| Key | Action |
+|---|---|
+| `Super + {1-9}` | Switch to desktop |
 | `Super + Shift + {1-9}` | Send window to desktop |
-| `Super + Alt + Arrows` | Resize window |
+| `Super + [` / `Super + ]` | Previous / Next desktop |
+
+### BSPWM — Resize
+| Key | Action |
+|---|---|
+| `Super + Alt + Arrows` | Expand window edge |
+| `Super + Alt + Shift + Arrows` | Shrink window edge |
+
+### BSPWM — Preselect
+| Key | Action |
+|---|---|
+| `Super + Ctrl + {H,J,K,L}` | Preselect split direction |
+| `Super + Ctrl + {1-9}` | Preselect split ratio |
+| `Super + Ctrl + Space` | Cancel preselect |
+
+### BSPWM — Session
+| Key | Action |
+|---|---|
+| `Super + Alt + R` | Restart bspwm |
+| `Super + Alt + Q` | Quit bspwm |
 
 ### Media
 | Key | Action |
