@@ -116,7 +116,16 @@ The script will automatically:
 ### Screenshot
 | Key | Action |
 |---|---|
-| `Print` | Rofi menu — fullscreen / area / clipboard / annotate |
+| `Print` | Open screenshot menu (Rofi) |
+
+Screenshot menu options:
+| Option | Action |
+|---|---|
+| Fullscreen | Save to `~/Pictures/Screenshots/` |
+| Select Area | Draw selection → save to file |
+| Fullscreen → Clipboard | Copy fullscreen to clipboard |
+| Select Area → Clipboard | Draw selection → copy to clipboard |
+| Annotate (Flameshot) | Open Flameshot GUI for annotation |
 
 ### nsxiv
 | Key | Action |
