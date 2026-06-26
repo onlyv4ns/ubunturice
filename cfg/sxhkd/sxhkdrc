@@ -19,7 +19,7 @@ ctrl + alt + e
 ctrl + alt + c
 	env GDK_DPI_SCALE=0.75 code --ozone-platform=x11
 
-ctrl + alt + space
+super + d
 	rofi -show drun -theme ~/.config/rofi/launcher.rasi
 
 ctrl + alt + p
@@ -71,7 +71,7 @@ XF86MonBrightnessDown
 # BSPWM — Window — Super
 # ============================================================
 
-super + w
+alt + F4
 	bspc node -c
 
 super + shift + w
