@@ -174,6 +174,16 @@ expect eof
 EXPECT
     info "Vencord installed"
 fi
+# Download Vencord dist files if missing
+VENCORD_DIST="$HOME/.config/Vencord/dist"
+if [[ ! -f "$VENCORD_DIST/patcher.js" ]]; then
+    info "Downloading Vencord dist files..."
+    mkdir -p "$VENCORD_DIST"
+    BASE="https://github.com/Vendicated/Vencord/releases/download/devbuild"
+    for f in patcher.js preload.js renderer.js renderer.css; do
+        curl -sL "$BASE/$f" -o "$VENCORD_DIST/$f"
+    done
+fi
 mkdir -p "$HOME/.config/Vencord/themes"
 cp "$DOTFILES_DIR/cfg/discord/everblush.css" "$HOME/.config/Vencord/themes/everblush.css"
 info "Discord theme copied — enable it in Discord: Vencord Settings → Themes"
