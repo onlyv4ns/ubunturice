@@ -20,7 +20,7 @@ sudo apt-get update -qq
 sudo apt-get install -y \
     bspwm sxhkd picom polybar alacritty kitty dunst rofi fastfetch \
     xwallpaper dmenu maim stterm xsel neovim zathura bat \
-    i3lock flameshot clipmenu brightnessctl \
+    i3lock flameshot brightnessctl \
     libxcomposite-dev libxdamage-dev libxfixes-dev libxrender-dev \
     libx11-dev libxext-dev libxrandr-dev \
     libconfuse-dev libxdg-basedir-dev \
@@ -32,6 +32,20 @@ if ! command -v cargo &>/dev/null; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 fi
 source "$HOME/.cargo/env" 2>/dev/null || true
+
+if ! command -v clipmenu &>/dev/null; then
+    info "Building clipnotify and clipmenu from source..."
+    TMP=$(mktemp -d)
+    git clone --depth=1 https://github.com/cdown/clipnotify "$TMP/clipnotify"
+    make -C "$TMP/clipnotify"
+    sudo cp "$TMP/clipnotify/clipnotify" /usr/local/bin/
+    git clone --depth=1 https://github.com/cdown/clipmenu "$TMP/clipmenu"
+    sudo make -C "$TMP/clipmenu" install
+    rm -rf "$TMP"
+    info "clipmenu installed"
+else
+    info "clipmenu already exists, skipping"
+fi
 
 if ! command -v compix &>/dev/null; then
     info "Building compix from source..."
