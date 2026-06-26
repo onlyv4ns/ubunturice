@@ -98,19 +98,19 @@ The script will automatically:
 
 ## Keybindings
 
-### General
+### Apps — `Ctrl + Alt`
 | Key | Action |
 |---|---|
 | `Ctrl + Alt + T` / `Ctrl + Alt + Return` | Terminal |
 | `Ctrl + Alt + Space` | App launcher (Rofi) |
-| `Ctrl + Alt + P` | Power menu |
-| `Ctrl + Alt + L` | Lockscreen |
-| `Ctrl + Alt + V` | Clipboard history (Rofi) |
-| `Ctrl + Alt + W` | Random wallpaper |
 | `Ctrl + Alt + B` | Browser (Chrome) |
 | `Ctrl + Alt + D` | Discord |
 | `Ctrl + Alt + E` | File manager (Nautilus) |
 | `Ctrl + Alt + C` | VS Code |
+| `Ctrl + Alt + P` | Power menu |
+| `Ctrl + Alt + L` | Lockscreen |
+| `Ctrl + Alt + V` | Clipboard history |
+| `Ctrl + Alt + W` | Random wallpaper |
 | `Ctrl + Alt + Escape` | Reload sxhkd |
 
 ### Screenshot
@@ -144,43 +144,43 @@ Screenshot menu options:
 | `Ctrl + ,` | Open settings (find Vencord section at bottom) |
 | `Ctrl + Shift + I` | DevTools (for debugging) |
 
-### BSPWM — Window
+### BSPWM — Window — `Super`
 | Key | Action |
 |---|---|
-| `Ctrl + Alt + F4` | Close window |
-| `Ctrl + Alt + Shift + F4` | Kill window (force) |
-| `Ctrl + Alt + {H,J,K,L}` / `Ctrl + Alt + Arrows` | Focus window |
-| `Ctrl + Alt + Shift + {H,J,K,L}` / `Ctrl + Alt + Shift + Arrows` | Move window |
-| `Ctrl + Alt + G` | Swap with largest window |
-| `Ctrl + Alt + {F1,F2,F3}` | Tiled / Floating / Fullscreen |
-| `Ctrl + Alt + Shift + F1` | Pseudo-tiled |
-| `Ctrl + Alt + M` | Toggle monocle layout |
+| `Super + W` | Close window |
+| `Super + Shift + W` | Kill window (force) |
+| `Super + {H,J,K,L}` / `Super + Arrows` | Focus window |
+| `Super + Shift + {H,J,K,L}` / `Super + Shift + Arrows` | Move window |
+| `Super + G` | Swap with largest window |
+| `Super + {T,S,F}` | Tiled / Floating / Fullscreen |
+| `Super + Shift + T` | Pseudo-tiled |
+| `Super + M` | Toggle monocle layout |
 
-### BSPWM — Desktop
+### BSPWM — Desktop — `Super`
 | Key | Action |
 |---|---|
-| `Ctrl + Alt + {1-9}` | Switch to desktop |
-| `Ctrl + Alt + Shift + {1-9}` | Send window to desktop |
-| `Ctrl + Alt + [` / `Ctrl + Alt + ]` | Previous / Next desktop |
+| `Super + {1-9}` | Switch to desktop |
+| `Super + Shift + {1-9}` | Send window to desktop |
+| `Super + [` / `Super + ]` | Previous / Next desktop |
 
-### BSPWM — Resize
+### BSPWM — Resize — `Super + Alt`
 | Key | Action |
 |---|---|
-| `Ctrl + Shift + Arrows` | Expand window edge |
-| `Ctrl + Shift + Alt + Arrows` | Shrink window edge |
+| `Super + Alt + Arrows` | Expand window edge |
+| `Super + Alt + Shift + Arrows` | Shrink window edge |
 
-### BSPWM — Preselect
+### BSPWM — Preselect — `Super + Ctrl`
 | Key | Action |
 |---|---|
-| `Ctrl + Shift + {H,J,K,L}` | Preselect split direction |
-| `Ctrl + Shift + {1-9}` | Preselect split ratio |
-| `Ctrl + Shift + Space` | Cancel preselect |
+| `Super + Ctrl + {H,J,K,L}` | Preselect split direction |
+| `Super + Ctrl + {1-9}` | Preselect split ratio |
+| `Super + Ctrl + Space` | Cancel preselect |
 
-### BSPWM — Session
+### BSPWM — Session — `Super + Alt`
 | Key | Action |
 |---|---|
-| `Ctrl + Alt + R` | Restart bspwm |
-| `Ctrl + Alt + Q` | Quit bspwm |
+| `Super + Alt + R` | Restart bspwm |
+| `Super + Alt + Q` | Quit bspwm |
 
 ### Volume
 | Key | Action |

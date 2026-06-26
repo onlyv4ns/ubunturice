@@ -1,50 +1,39 @@
 # ============================================================
-# Shortcut Umum
+# Apps — Ctrl + Alt
 # ============================================================
 
-# Terminal
 ctrl + alt + t
 	alacritty --working-directory ~
 ctrl + alt + Return
 	alacritty --working-directory ~
 
-# Browser
 ctrl + alt + b
 	env GDK_DPI_SCALE=0.75 google-chrome --ozone-platform=x11
 
-# Discord
 ctrl + alt + d
 	discord --enable-transparent-visuals
 
-# File manager
 ctrl + alt + e
 	env GDK_DPI_SCALE=0.75 nautilus
 
-# Text editor
 ctrl + alt + c
 	env GDK_DPI_SCALE=0.75 code --ozone-platform=x11
 
-# App launcher
 ctrl + alt + space
 	rofi -show drun -theme ~/.config/rofi/launcher.rasi
 
-# Power menu
 ctrl + alt + p
 	~/.config/polybar/scripts/powermenu.sh
 
-# Lockscreen
 ctrl + alt + l
 	~/.local/bin/lock.sh
 
-# Clipboard history
 ctrl + alt + v
 	CM_LAUNCHER=rofi clipmenu -theme ~/.config/rofi/launcher.rasi
 
-# Random wallpaper
 ctrl + alt + w
 	~/.local/bin/wallrandom.sh
 
-# Reload sxhkd
 ctrl + alt + Escape
 	pkill -USR1 -x sxhkd
 
@@ -56,7 +45,7 @@ Print
 	~/.local/bin/screenshot.sh
 
 # ============================================================
-# Volume (PipeWire)
+# Volume
 # ============================================================
 
 XF86AudioRaiseVolume
@@ -79,97 +68,85 @@ XF86MonBrightnessDown
 	brightnessctl set 5%-
 
 # ============================================================
-# BSPWM — Window
+# BSPWM — Window — Super
 # ============================================================
 
-# Tutup / kill window
-ctrl + alt + F4
+super + w
 	bspc node -c
 
-ctrl + alt + shift + F4
+super + shift + w
 	bspc node -k
 
-# Layout tiled / floating / fullscreen / pseudo-tiled
-ctrl + alt + {F1,F2,F3,shift + F1}
+super + {t,s,f,shift + t}
 	bspc node -t {tiled,floating,fullscreen,pseudo_tiled}
 
-# Node flags
-ctrl + shift + {m,x,y,z}
+super + m
+	bspc desktop -l next
+
+super + g
+	bspc node -s biggest.window
+
+super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
 # ============================================================
-# BSPWM — Fokus & Pindah
+# BSPWM — Fokus & Pindah — Super
 # ============================================================
 
-# Fokus dengan arrow
-ctrl + alt + {Left,Down,Up,Right}
+super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 
-# Fokus dengan vim keys
-ctrl + alt + {h,j,k,l}
+super + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
-# Pindah window dengan vim keys
-ctrl + alt + shift + {h,j,k,l}
+super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
 
-# Pindah window dengan arrow
-ctrl + alt + shift + {Left,Down,Up,Right}
+super + shift + {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east}
 
-# Swap dengan window terbesar
-ctrl + alt + g
-	bspc node -s biggest.window
-
 # ============================================================
-# BSPWM — Desktop
+# BSPWM — Desktop — Super
 # ============================================================
 
-# Pindah desktop
-ctrl + alt + {1-9,0}
+super + {1-9,0}
 	bspc desktop -f '^{1-9,10}'
 
-# Kirim window ke desktop
-ctrl + alt + shift + {1-9,0}
+super + shift + {1-9,0}
 	bspc node -d '^{1-9,10}'
 
-# Desktop sebelumnya / berikutnya
-ctrl + alt + bracket{left,right}
+super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# Toggle monocle
-ctrl + alt + m
-	bspc desktop -l next
-
 # ============================================================
-# BSPWM — Resize
+# BSPWM — Resize — Super + Alt
 # ============================================================
 
-ctrl + shift + {Left,Down,Up,Right}
+super + alt + {Left,Down,Up,Right}
 	bspc node -z {left -30 0,bottom 0 30,top 0 -30,right 30 0}
 
-ctrl + shift + alt + {Left,Down,Up,Right}
+super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -30 0,top 0 30,bottom 0 -30,left 30 0}
 
 # ============================================================
-# BSPWM — Preselect
+# BSPWM — Preselect — Super + Ctrl
 # ============================================================
 
-ctrl + shift + {h,j,k,l}
+super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
-ctrl + shift + {1-9}
+super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-ctrl + shift + space
+super + ctrl + space
 	bspc node -p cancel
 
 # ============================================================
-# BSPWM — Session
+# BSPWM — Session — Super + Alt
 # ============================================================
 
-ctrl + alt + r
+super + alt + r
 	bspc wm -r
 
-ctrl + alt + q
+super + alt + q
 	bspc quit
