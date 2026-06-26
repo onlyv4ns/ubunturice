@@ -1,0 +1,28 @@
+#!/bin/bash
+i3lock \
+  --nofork \
+  --color=0a1114 \
+  --inside-color=141b1e00 \
+  --insidever-color=141b1ecc \
+  --insidewrong-color=141b1ecc \
+  --ring-color=1d2527 \
+  --ringver-color=67b0e8 \
+  --ringwrong-color=e57474 \
+  --keyhl-color=67b0e8 \
+  --bshl-color=e57474 \
+  --line-color=0a1114 \
+  --separator-color=0a1114 \
+  --verif-color=67b0e8 \
+  --wrong-color=e57474 \
+  --time-color=dadada \
+  --date-color=3b4244 \
+  --greeter-color=67b0e8 \
+  --time-str="%H:%M" \
+  --date-str="%A, %d %B" \
+  --verif-text="verifying..." \
+  --wrong-text="wrong!" \
+  --noinput-text="" \
+  --radius=80 \
+  --ring-width=4 \
+  --clock \
+  --indicator

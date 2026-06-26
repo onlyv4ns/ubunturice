@@ -29,6 +29,9 @@ Personal BSPWM dotfiles running on Ubuntu (X11), using a custom dark colorscheme
 | Browser | [Firefox](https://www.mozilla.org/firefox) / [Google Chrome](https://www.google.com/chrome) |
 | GTK Theme | Adwaita-dark + custom `gtk.css` |
 | Icon Theme | [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) |
+| Lockscreen | [i3lock](https://github.com/i3/i3lock) |
+| Screenshot | [Flameshot](https://flameshot.org) / [maim](https://github.com/naelstrof/maim) |
+| Clipboard | [clipmenu](https://github.com/cdown/clipmenu) |
 | System Info | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | PDF Viewer | [Zathura](https://pwmt.org/projects/zathura) |
 
@@ -91,6 +94,54 @@ The script will automatically:
 > - For touchpad natural scroll, uncomment the `xinput` line in `~/.config/bspwm/bspwmrc`
 > - Open Neovim and run `:Lazy` to install plugins
 > - For Firefox theming: run Firefox once first, then re-run `install.sh`
+
+## Keybindings
+
+### General
+| Key | Action |
+|---|---|
+| `Super + Return` / `Ctrl + Alt + T` | Terminal |
+| `Super + D` | App launcher (Rofi) |
+| `Super + P` | Power menu |
+| `Super + Alt + L` | Lockscreen |
+| `Super + V` | Clipboard history (Rofi) |
+| `Super + Alt + W` | Random wallpaper |
+| `Ctrl + Alt + B` | Browser (Chrome) |
+| `Ctrl + Alt + E` | File manager (Nautilus) |
+| `Ctrl + Alt + C` | VS Code |
+| `Super + Escape` | Reload sxhkd |
+
+### Screenshot
+| Key | Action |
+|---|---|
+| `Super + Shift + S` | Flameshot GUI (annotate) |
+| `Print` | Fullscreen → file |
+| `Shift + Print` | Select area → file |
+| `Ctrl + Print` | Fullscreen → clipboard |
+| `Ctrl + Shift + Print` | Select area → clipboard |
+
+### Window
+| Key | Action |
+|---|---|
+| `Super + W` | Close window |
+| `Super + {H,J,K,L}` / `Super + Arrows` | Focus window |
+| `Super + Shift + {H,J,K,L}` | Move window |
+| `Super + {T,S,F}` | Tiled / Floating / Fullscreen |
+| `Super + M` | Toggle monocle |
+| `Super + {1-9}` | Switch desktop |
+| `Super + Shift + {1-9}` | Send window to desktop |
+| `Super + Alt + Arrows` | Resize window |
+
+### Media
+| Key | Action |
+|---|---|
+| `XF86AudioRaiseVolume` | Volume +5% |
+| `XF86AudioLowerVolume` | Volume -5% |
+| `XF86AudioMute` | Toggle mute |
+| `XF86MonBrightnessUp` | Brightness +5% |
+| `XF86MonBrightnessDown` | Brightness -5% |
+
+<br>
 
 ## Uninstall
 

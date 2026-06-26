@@ -20,6 +20,7 @@ sudo apt-get update -qq
 sudo apt-get install -y \
     bspwm sxhkd picom polybar alacritty kitty dunst rofi fastfetch \
     xwallpaper dmenu maim stterm xsel neovim zathura bat \
+    i3lock flameshot clipmenu brightnessctl \
     libxcomposite-dev libxdamage-dev libxfixes-dev libxrender-dev \
     libx11-dev libxext-dev libxrandr-dev \
     libconfuse-dev libxdg-basedir-dev \
@@ -80,9 +81,11 @@ mkdir -p \
     "$CONFIG_DIR/eww/systray/windows/settings-panel" \
     "$CONFIG_DIR/bat/themes" \
     "$CONFIG_DIR/zathura" \
+    "$CONFIG_DIR/dunst" \
     "$HOME/wall" \
     "$HOME/.local/share/fonts" \
     "$HOME/.local/share/applications" \
+    "$HOME/.local/bin" \
     "$CONFIG_DIR/gtk-3.0" \
     "$CONFIG_DIR/gtk-4.0"
 
@@ -121,6 +124,11 @@ cp "$DOTFILES_DIR/cfg/neovim/init.lua"             "$CONFIG_DIR/nvim/init.lua"
 cp "$DOTFILES_DIR/cfg/fastfetch/config.jsonc"      "$CONFIG_DIR/fastfetch/config.jsonc"
 
 cp "$DOTFILES_DIR/cfg/.Xresources"                "$HOME/.Xresources"
+
+cp "$DOTFILES_DIR/cfg/dunst/dunstrc"               "$CONFIG_DIR/dunst/dunstrc"
+
+cp -r "$DOTFILES_DIR/bin/"*                        "$HOME/.local/bin/"
+chmod +x "$HOME/.local/bin/"*
 
 cp "$DOTFILES_DIR/cfg/gtk-3.0/settings.ini"       "$CONFIG_DIR/gtk-3.0/settings.ini"
 cp "$DOTFILES_DIR/cfg/gtk-4.0/settings.ini"        "$CONFIG_DIR/gtk-4.0/settings.ini"

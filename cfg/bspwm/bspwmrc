@@ -31,7 +31,9 @@ bspc rule -a TelegramDesktop    desktop='^4'
 ######### Autostart ################
 dunst &
 xsetroot -cursor_name left_ptr &
+xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 24 &
 picom --config ~/.config/picom/picom.conf &
+pgrep -x clipmenud > /dev/null || clipmenud &
 
 ######## Wallpaper & Bar ####
 xwallpaper --zoom ~/wall/whitewaves.jpg &
