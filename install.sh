@@ -156,6 +156,28 @@ cp -r "$DOTFILES_DIR/cfg/chrome-theme/"* "$HOME/.local/share/chrome-theme/"
 info "Chrome theme copied to ~/.local/share/chrome-theme/"
 info "  To apply: open chrome://extensions → enable Developer mode → Load unpacked → select that folder"
 
+# Vencord (Discord mod) — install if Discord exists and Vencord not yet patched
+if command -v discord &>/dev/null && [[ ! -d "$HOME/.config/Vencord/dist" ]]; then
+    info "Installing Vencord for Discord..."
+    TMP=$(mktemp -d)
+    curl -sL "https://api.github.com/repos/Vendicated/VencordInstaller/releases/latest" \
+      | python3 -c "import sys,json; r=json.load(sys.stdin); [print(a['browser_download_url']) for a in r.get('assets',[]) if 'Cli-linux' in a['name']]" \
+      | xargs curl -sL -o "$TMP/VencordInstallerCli"
+    chmod +x "$TMP/VencordInstallerCli"
+    expect << EXPECT
+spawn $TMP/VencordInstallerCli install
+expect "What would you like to do"
+send "\r"
+expect "Select Discord install"
+send "\r"
+expect eof
+EXPECT
+    info "Vencord installed"
+fi
+mkdir -p "$HOME/.config/Vencord/themes"
+cp "$DOTFILES_DIR/cfg/discord/everblush.css" "$HOME/.config/Vencord/themes/everblush.css"
+info "Discord theme copied — enable it in Discord: Vencord Settings → Themes"
+
 # Firefox userChrome — requires toolkit.legacyUserProfileCustomizations.stylesheets = true in about:config
 FF_PROFILE=$(find "$HOME/.mozilla/firefox" -maxdepth 1 -name "*.default-release" -type d 2>/dev/null | head -1)
 if [[ -n "$FF_PROFILE" ]]; then
