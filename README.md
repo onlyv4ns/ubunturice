@@ -27,6 +27,8 @@ Personal BSPWM dotfiles running on Ubuntu (X11), using a custom dark colorscheme
 | Text Editor | [Neovim](https://neovim.io) / [VS Code](https://code.visualstudio.com) |
 | File Manager | [Nautilus](https://apps.gnome.org/Nautilus) |
 | Browser | [Firefox](https://www.mozilla.org/firefox) / [Google Chrome](https://www.google.com/chrome) |
+| GTK Theme | Adwaita-dark + custom `gtk.css` |
+| Icon Theme | [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) |
 | System Info | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |
 | PDF Viewer | [Zathura](https://pwmt.org/projects/zathura) |
 
