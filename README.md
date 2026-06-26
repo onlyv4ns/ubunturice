@@ -182,12 +182,16 @@ Screenshot menu options:
 | `Super + Alt + R` | Restart bspwm |
 | `Super + Alt + Q` | Quit bspwm |
 
-### Media
+### Volume
 | Key | Action |
 |---|---|
 | `XF86AudioRaiseVolume` | Volume +5% |
 | `XF86AudioLowerVolume` | Volume -5% |
 | `XF86AudioMute` | Toggle mute |
+
+### Brightness
+| Key | Action |
+|---|---|
 | `XF86MonBrightnessUp` | Brightness +5% |
 | `XF86MonBrightnessDown` | Brightness -5% |
 
