@@ -108,6 +108,7 @@ The script will automatically:
 | `Super + V` | Clipboard history (Rofi) |
 | `Super + Alt + W` | Random wallpaper |
 | `Ctrl + Alt + B` | Browser (Chrome) |
+| `Ctrl + Alt + D` | Discord |
 | `Ctrl + Alt + E` | File manager (Nautilus) |
 | `Ctrl + Alt + C` | VS Code |
 | `Super + Escape` | Reload sxhkd |
@@ -115,11 +116,24 @@ The script will automatically:
 ### Screenshot
 | Key | Action |
 |---|---|
-| `Super + Shift + S` | Flameshot GUI (annotate) |
-| `Print` | Fullscreen → file |
-| `Shift + Print` | Select area → file |
-| `Ctrl + Print` | Fullscreen → clipboard |
-| `Ctrl + Shift + Print` | Select area → clipboard |
+| `Print` | Rofi menu — fullscreen / area / clipboard / annotate |
+
+### nsxiv
+| Key | Action |
+|---|---|
+| `q` | Quit |
+| `f` | Fullscreen |
+| `G` | Thumbnail grid |
+| `Space` / `Backspace` | Next / Previous image |
+| `+` / `-` | Zoom in / out |
+| `r` | Rotate 90° clockwise |
+| `Enter` | Open from thumbnail |
+
+### Discord (Vencord)
+| Key | Action |
+|---|---|
+| `Ctrl + ,` | Open settings (find Vencord section at bottom) |
+| `Ctrl + Shift + I` | DevTools (for debugging) |
 
 ### Window
 | Key | Action |
