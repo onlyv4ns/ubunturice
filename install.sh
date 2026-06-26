@@ -20,7 +20,7 @@ sudo apt-get update -qq
 sudo apt-get install -y \
     bspwm sxhkd picom polybar alacritty kitty dunst rofi fastfetch \
     xwallpaper dmenu maim stterm xsel neovim zathura bat \
-    i3lock flameshot brightnessctl \
+    i3lock flameshot brightnessctl nsxiv \
     libxcomposite-dev libxdamage-dev libxfixes-dev libxrender-dev \
     libx11-dev libxext-dev libxrandr-dev \
     libconfuse-dev libxdg-basedir-dev \
@@ -150,6 +150,7 @@ cp "$DOTFILES_DIR/cfg/gtk-4.0/gtk.css"             "$CONFIG_DIR/gtk-4.0/gtk.css"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 cp "$DOTFILES_DIR/cfg/applications/google-chrome.desktop" "$HOME/.local/share/applications/google-chrome.desktop"
+cp "$DOTFILES_DIR/cfg/applications/mimeapps.list"        "$CONFIG_DIR/mimeapps.list"
 
 mkdir -p "$HOME/.local/share/chrome-theme"
 cp -r "$DOTFILES_DIR/cfg/chrome-theme/"* "$HOME/.local/share/chrome-theme/"
